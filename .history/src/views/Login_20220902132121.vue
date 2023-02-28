@@ -1,0 +1,36 @@
+<template>
+  <div class="login">
+    <form class="form" @submit.prevent="login">
+      <h1>Login</h1>
+      <label for="username">Username</label>
+      <input v-model="username" name="username" type="text" class="input">
+      <label for="password">Password</label>
+      <input v-model="password" name="password" type="text" class="input">
+      <button class="btn">Login</button>
+    </form>
+  </div>
+</template>
+
+<script>
+import {ref} from 'vue'
+export default {
+    setup(){
+      const username = ref('')
+      const password = ref('')
+      return {username, password}
+    },
+    data: () => ({
+      username: '',
+      password: ''
+    }),
+    methods: {
+      login(){
+        // Auth user against API
+        window.user = this.username
+        const redirectPath = this.$route.query.redirect || '/protected'
+        this.$router.push(redirectPath)
+      }  
+    },
+
+  }
+</script>

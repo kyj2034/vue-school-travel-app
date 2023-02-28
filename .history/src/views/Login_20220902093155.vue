@@ -1,0 +1,10 @@
+<template>
+  <div class="login">
+    <form class="form">
+      <h1>Login</h1>
+      <label for="username">Username</label>
+      <input name="username" type="text"></input>
+      <label for="password">Password</label>
+    </form>
+  </div>
+</template>

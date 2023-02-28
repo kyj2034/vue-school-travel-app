@@ -1,0 +1,17 @@
+<template>
+  <div class="card">
+    <img :src="`/images/${experiences.image}`" :alt="experience.name"/>
+    <span class="card__text">
+      {{ experience.name }}
+    </span>
+  </div>
+</template>
+
+<script>
+import sourceData from '@/data.json'
+  export default {
+    props:{
+      experience:{type: Object, required: true,}
+    }
+  }
+</script>
